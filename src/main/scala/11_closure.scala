@@ -4,7 +4,7 @@
     def f : Int => Int = {
       val t = 10
       def g(x: Int) : Int = x + t
-      g
+      g _
     }
     f(20)
   }
