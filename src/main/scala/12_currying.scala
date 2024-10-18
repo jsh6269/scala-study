@@ -6,10 +6,10 @@
   }
 
   def sum_neat(f: Int=>Int)(a: Int, b: Int): Int = 
-    if (a <= b) f(a) + sum(f)(a+1, b) else 0
+    if (a <= b) f(a) + sum_neat(f)(a+1, b) else 0
 
   def sum_neat2(f: Int=>Int): (Int, Int) => Int = 
-    (a, b) => if (a <= b) f(a) + sum(f)(a+1, b) else 0
+    (a, b) => if (a <= b) f(a) + sum_neat2(f)(a+1, b) else 0
 
   def sumCubes = sum(n => n*n*n)
   val res1 = sumCubes(1, 5)
